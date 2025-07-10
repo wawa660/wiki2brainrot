@@ -203,4 +203,41 @@ body.dark .footer-link, body.dark .x-icon {
 }
 .hidden {
   display: none !important;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 98vw;
+    margin: 16px 1vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border-radius: 12px;
+  }
+  .toggle-row {
+    position: static;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  #search-form {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  #search-input, button[type="submit"], #random-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0.7rem;
+  }
+  .result-area {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+    min-height: 80px;
+  }
+  .footer {
+    font-size: 0.95rem;
+    margin-top: 1.2rem;
+    padding: 0.7rem 0 0.5rem 0;
+  }
 } 
