@@ -11,8 +11,12 @@ genai.configure(api_key=GEMINI_API_KEY)
 WIKI_API_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 WIKI_RANDOM_URL = "https://en.wikipedia.org/api/rest_v1/page/random/summary"
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../static", static_url_path="")
 CORS(app)
+
+@app.route("/")
+def root():
+    return app.send_static_file("index.html")
 
 @app.route('/api/search', methods=['GET'])
 def search_article():
