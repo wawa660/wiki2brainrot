@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainrot Wiki Summarizer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-row">
+      <span class="toggle-icon" title="Toggle dark mode">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </span>
+      <label class="switch">
+        <input type="checkbox" id="dark-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <h1>Brainrot Wiki Summarizer</h1>
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search Wikipedia..." autocomplete="off" required>
+      <button type="submit">Search</button>
+      <button type="button" id="random-btn">Randomizer</button>
+    </form>
+    <div id="result" class="result-area hidden"></div>
+  </div>
+  <footer class="footer">
+    <a href="https://x.com/wawatech6" target="_blank" rel="noopener" class="footer-link" title="Follow on X">
+      <svg width="22" height="22" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" class="x-icon"><path d="M1199.61 0H950.13L600.01 464.13L249.87 0H0L462.13 629.13L0 1227H249.87L600.01 762.87L950.13 1227H1199.61L737.48 597.87L1199.61 0ZM950.13 1126.61L600.01 662.48L249.87 1126.61H109.57L600.01 464.13L109.57 100.39H249.87L600.01 564.52L950.13 100.39H1090.43L600.01 762.87L1090.43 1126.61H950.13Z" fill="currentColor"/></svg>
+      <span>@wawatech6</span>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
