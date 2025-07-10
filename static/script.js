@@ -4,10 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const result = document.getElementById('result');
   const randomBtn = document.getElementById('random-btn');
   const darkToggle = document.getElementById('dark-toggle');
+  const loader = document.getElementById('loader');
+
+  function showLoader() {
+    loader.classList.remove('hidden');
+    result.classList.add('hidden');
+  }
+  function hideLoader() {
+    loader.classList.add('hidden');
+  }
 
   async function fetchRandomArticle() {
-    result.classList.add('hidden');
-    result.textContent = 'Loading random article...';
+    showLoader();
     try {
       const res = await fetch('/api/random');
       const data = await res.json();
@@ -21,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (err) {
       result.textContent = 'Error fetching random article.';
       result.classList.remove('hidden');
+    } finally {
+      hideLoader();
     }
   }
 
@@ -28,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     const query = input.value.trim();
     if (!query) return;
-    result.classList.add('hidden');
-    result.textContent = 'Loading...';
+    showLoader();
     try {
       const res = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
       const data = await res.json();
@@ -43,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (err) {
       result.textContent = 'Error fetching article.';
       result.classList.remove('hidden');
+    } finally {
+      hideLoader();
     }
   });
 
